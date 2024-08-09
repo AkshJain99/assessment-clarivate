@@ -73,6 +73,7 @@ git clone <assessment-repo-url>
 
     ```bash
     cd frontend
+    cd frontendapp
     ```
 
 2. Install the frontend dependencies:
@@ -87,13 +88,13 @@ git clone <assessment-repo-url>
     npm run start (use this command only)
     ```
 
-   The frontend will be accessible at `http://localhost:4200`.
+   The frontend will be accessible at `http://localhost:4200`(if it will not run in normal chrome browser please use incognito mode as there might be an issue with cors header from backend which can restrict any API calls)
 
 ### 5. Configure mySQL
 
 1. Ensure mySQL is installed and running.
 
-2. Create a database named `My-account` using Dbeaver:
+2. Create a database named `My-account` using Dbeaver software or any other of your choice:
 
 3. Verify and configure mySQL settings in the `shared_orm_library` if needed.
 
