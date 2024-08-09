@@ -95,7 +95,7 @@ git clone <assessment-repo-url>
 
 1. Ensure mySQL is installed and running.
 
-2. Create a database named `My-account` using Dbeaver software or any other of your choice:
+2. Create a database named `my_account` using Dbeaver software or any other of your choice:
 
 3. Verify and configure mySQL settings in the `shared_orm_library` if needed.
 
