@@ -1,0 +1,31 @@
+frontend_project/frontendapp/node_modules/
+
+# Ignore Django specific files and directories in the backend folder
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/venv/
+backend/staticfiles/
+
+# Ignore Python virtual environments in the backend folder
+backend/venv/
+backend/env/
+
+# Ignore shared ORM library specific files
+shared-orm-library/__pycache__/
+shared-orm-library/*.pyc
+shared-orm-library/*.pyo
+shared-orm-library/*.pyd
+shared-orm-library/env/
+
+# Ignore environment variable files
+*.env
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
