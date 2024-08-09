@@ -33,23 +33,7 @@ Clone the repositories to your local machine:
 git clone <assessment-repo-url> 
 ```
 
-### 2. Set Up the Shared ORM Library
-
-1. Navigate to the `shared-orm-library` directory:
-
-    ```bash
-    cd shared-orm-library
-    ```
-
-2. Install the shared ORM library:
-
-    ```bash
-    pip install -e .
-    ```
-
-   This installs the `shared_orm_library` package in editable mode, allowing you to make changes and see them immediately.
-
-### 3. Set Up the Backend
+### 1. Set Up the backend Project
 
 1. Navigate to the `backend` directory:
 
@@ -57,10 +41,9 @@ git clone <assessment-repo-url>
     cd backend
     ```
 
-2. Create and activate a virtual environment:
+2.  activate a virtual environment:
 
     ```bash
-    python -m venv env
     source env/bin/activate  # On Windows use: env\Scripts\activate
     ```
 
@@ -71,13 +54,12 @@ git clone <assessment-repo-url>
     ```
 
 4. Apply database migrations:
-
     ```bash
+    setup your Database default configuration given below(remember do not change creds otherwise you need to change db Config in shared-orm library and install it your backend project)
     python manage.py migrate
     ```
 
 5. Run the Django development server:
-
     ```bash
     python manage.py runserver
     ```
@@ -101,41 +83,34 @@ git clone <assessment-repo-url>
 3. Start the Angular development server:
 
     ```bash
-    ng serve
+    npm run start (use this command only)
     ```
 
    The frontend will be accessible at `http://localhost:4200`.
 
-### 5. Configure PostgreSQL
+### 5. Configure mySQL
 
-1. Ensure PostgreSQL is installed and running.
+1. Ensure mySQL is installed and running.
 
-2. Create a database named `My-account`:
+2. Create a database named `My-account` using Dbeaver:
 
-    ```sql
-    CREATE DATABASE "My-account";
-    ```
+3. Verify and configure mySQL settings in the `shared_orm_library` if needed.
 
-3. Verify and configure PostgreSQL settings in the `shared_orm_library` if needed.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'my_account',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
 
 ### 6. Verify the Setup
 
-- **Backend**: Access the API at `http://localhost:8000/users/` to ensure it returns a list of users.
-- **Frontend**: Access the Angular application at `http://localhost:4200/` and confirm it displays the user list fetched from the backend.
+- **Backend**: Access the API at `http://127.0.0.1:8000/users/` to ensure it returns a list of users
+- **Frontend**: Access the Angular application at `http://localhost:4200/user` and confirm it displays the user list fetched from the backend. (and it will display users in table form)
 
-## Troubleshooting
+REMEBER TO ADD USER DATA in DATABASE MANUALLY
 
-- **ModuleNotFoundError**: If you encounter issues importing `shared_orm_library`, ensure the path is correctly added to `sys.path` in your Django settings.
-- **Database Issues**: Check PostgreSQL service status and ensure the database name and credentials are correct in the `shared_orm_library`.
-
-## Contributing
-
-To contribute to this project, please fork the repository and submit a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to adjust the URLs and paths according to your project specifics. If you need further modifications or additional sections, just let me know!
