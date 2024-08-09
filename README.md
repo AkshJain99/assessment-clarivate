@@ -57,7 +57,7 @@ git clone <assessment-repo-url>
     ```bash
     setup your Database default using configuration given below(remember do not change creds otherwise you need to change db Config in shared-orm library and install it your backend project)
 
-    **python manage.py migrate**
+    python manage.py migrate
     ```
 
 5. Run the Django development server:
